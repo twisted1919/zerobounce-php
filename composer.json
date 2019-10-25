@@ -1,6 +1,6 @@
 {
     "name": "twisted1919/zerobounce",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "ZeroBounce Email Verification Library for PHP",
     "homepage": "https://www.zerobounce.net",
     "autoload": {
