@@ -14,10 +14,10 @@ try {
     $apiKey = (string)getenv('ZEROBOUNCE_API_KEY');
     
     /** @var HttpClient $client */
-    $client = new ZeroBounce\HttpClient\HttpClient($apiKey);
+    $client = new HttpClient($apiKey);
     
     /** @var Api $api */
-    $api = new ZeroBounce\Api($client);
+    $api = new Api($client);
     
     /** @var \ZeroBounce\Response\ValidateResponse $response */
     $response = $api->validate('valid@example.com');
