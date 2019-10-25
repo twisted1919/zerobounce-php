@@ -22,12 +22,8 @@ try {
     
     /** @var CreditsResponse $response */
     $response = $api->credits();
-    
-    if ($response->hasError()) {
-        var_dump($response->getError());
-    } else {
-        var_dump($response->getCredits());
-    }
+
+    var_dump($response->getCredits());
 } catch (Exception $e) {
     throw $e;
 }
