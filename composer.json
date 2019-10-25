@@ -1,8 +1,8 @@
 {
     "name": "twisted1919/zerobounce",
     "version": "1.0.0",
-    "description": "ZeroBounce API library client for PHP",
-    "homepage": "http://zerobounce.net",
+    "description": "ZeroBounce Email Verification Library for PHP",
+    "homepage": "https://www.zerobounce.net",
     "autoload": {
         "psr-0": {
             "ZeroBounce\\": "src/"

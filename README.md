@@ -37,7 +37,7 @@ $api = new ZeroBounce\Api($client);
 
 try {
 
-  /** @var \ZeroBounce\Response\ValidateResponse $response */
+  /** @var ZeroBounce\Response\ValidateResponse $response */
   $response = $api->validate("test@example.com");
 
 } catch (Exception $e) {
