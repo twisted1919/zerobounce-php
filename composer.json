@@ -1,0 +1,33 @@
+{
+    "name": "twisted1919/zerobounce",
+    "version": "1.0.0",
+    "description": "ZeroBounce API library client for PHP",
+    "homepage": "http://zerobounce.net",
+    "autoload": {
+        "psr-0": {
+            "ZeroBounce\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "ZeroBounce\\Test\\": "test/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "guzzlehttp/guzzle": "^6.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5",
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpstan/phpstan": "^0.11.19"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit",
+        "fix-style": "./vendor/bin/php-cs-fixer fix .",
+        "analyse": "./vendor/bin/phpstan analyse src test example -c phpstan.neon --level max --memory-limit=-1"
+    },
+    "license": "MIT"
+}
