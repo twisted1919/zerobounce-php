@@ -14,8 +14,8 @@ class CreditsResponse extends Response
     public function getCredits(): int
     {
         /** @var int $credits */
-        $credits = $this->getResponseData()['Credits'] ?? 0;
+        $credits = (int)($this->getResponseData()['Credits'] ?? 0);
         
-        return (int)$credits;
+        return $credits;
     }
 }

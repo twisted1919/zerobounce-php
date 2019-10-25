@@ -10,19 +10,4 @@ use ZeroBounce\HttpClient\HttpResponse;
  */
 class Response extends HttpResponse
 {
-    /**
-     * @return string
-     */
-    public function getError(): string
-    {
-        return $this->getResponseData()['error'] ?? '';
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasError(): bool
-    {
-        return strlen($this->getError()) > 0;
-    }
 }

@@ -9,16 +9,45 @@ namespace ZeroBounce\Response;
 class ValidateResponse extends Response
 {
     /**
+     * @return string
+     */
+    public function getStatus(): string
+    {
+        return (string)($this->getResponseData()['status'] ?? '');
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasStatus(): bool
+    {
+        return strlen($this->getStatus()) > 0;
+    }
+
+    /**
+     * @return string
+     */
+    public function getError(): string
+    {
+        return (string)($this->getResponseData()['error'] ?? '');
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasError(): bool
+    {
+        return strlen($this->getError()) > 0;
+    }
+    
+    /**
      * @param string $status
      *
      * @return bool
      */
     protected function statusIs(string $status): bool
     {
-        /** @var string $returnedStatus */
-        $returnedStatus = $this->getResponseData()['status'] ?? '';
-        
-        return $returnedStatus === $status;
+        return $this->getStatus() === $status;
     }
     
     /**

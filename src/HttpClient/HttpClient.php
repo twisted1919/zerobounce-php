@@ -73,7 +73,7 @@ class HttpClient implements HttpClientInterface
     {
         try {
             $response = $this->client->get($path, $this->mergeDefaultParams($params));
-            $response = new HttpResponse((string)$response->getBody(), $response->getStatusCode(), $response->getHeaders());
+            $response = new HttpResponse((string)$response->getBody(), (int)$response->getStatusCode(), (array)$response->getHeaders());
         } catch (BadResponseException $e) {
             throw new ClientException($e->getMessage(), $e->getCode());
         }

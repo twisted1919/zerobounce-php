@@ -57,7 +57,7 @@ class HttpResponse implements HttpResponseInterface
      */
     public function getResponseData(): array
     {
-        return $this->responseData;
+        return (array)$this->responseData;
     }
 
     /**
@@ -65,7 +65,7 @@ class HttpResponse implements HttpResponseInterface
      */
     public function getBody(): string
     {
-        return $this->body;
+        return (string)$this->body;
     }
 
     /**
@@ -73,7 +73,7 @@ class HttpResponse implements HttpResponseInterface
      */
     public function getCode(): int
     {
-        return $this->code;
+        return (int)$this->code;
     }
 
     /**
@@ -81,6 +81,6 @@ class HttpResponse implements HttpResponseInterface
      */
     public function getHeaders(): array
     {
-        return $this->headers;
+        return (array)$this->headers;
     }
 }
