@@ -7,6 +7,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use ZeroBounce\HttpClient\HttpClient;
 use ZeroBounce\Api;
+use ZeroBounce\Response\ValidateResponse;
 
 try {
     
@@ -19,7 +20,7 @@ try {
     /** @var Api $api */
     $api = new Api($client);
     
-    /** @var \ZeroBounce\Response\ValidateResponse $response */
+    /** @var ValidateResponse $response */
     $response = $api->validate('valid@example.com');
     
     if ($response->hasError()) {

@@ -7,6 +7,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use ZeroBounce\HttpClient\HttpClient;
 use ZeroBounce\Api;
+use ZeroBounce\Response\CreditsResponse;
 
 try {
     
@@ -19,7 +20,7 @@ try {
     /** @var Api $api */
     $api = new Api($client);
     
-    /** @var \ZeroBounce\Response\CreditsResponse $response */
+    /** @var CreditsResponse $response */
     $response = $api->credits();
     
     if ($response->hasError()) {
