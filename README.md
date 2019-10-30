@@ -15,8 +15,6 @@ Require the package
 $ composer require twisted1919/zerobounce
 ```
 
-> This package follows the `PSR-0` convention names for its classes, which means you can easily integrate these classes loading in your own autoloader.
-
 #### PHP Versions
 
 Requires PHP >= 7.1  
