@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\Test;
 
@@ -41,7 +43,7 @@ class ValidateTest extends Base
     {
         /** @var ValidateResponse $response */
         $response = $this->api->validate('catch_all@example.com');
-        
+
         $this->assertInstanceOf(ValidateResponse::class, $response);
         $this->assertTrue($response->isCatchAll());
     }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\HttpClient;
 
@@ -12,12 +14,12 @@ class HttpResponse implements HttpResponseInterface
      * @var string
      */
     private $body = '';
-    
+
     /**
      * @var int
      */
     private $code = 200;
-    
+
     /**
      * @var array
      */

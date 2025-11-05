@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\Response;
 
@@ -39,7 +41,7 @@ class ValidateResponse extends Response
     {
         return strlen($this->getError()) > 0;
     }
-    
+
     /**
      * @param string $status
      *
@@ -49,7 +51,7 @@ class ValidateResponse extends Response
     {
         return $this->getStatus() === $status;
     }
-    
+
     /**
      * @return bool
      */

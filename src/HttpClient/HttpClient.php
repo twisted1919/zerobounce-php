@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\HttpClient;
 
@@ -61,7 +63,7 @@ class HttpClient implements HttpClientInterface
             ]
         ], $params);
     }
-    
+
     /**
      * @param string $path
      * @param array $params

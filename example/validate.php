@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Example file to show how we can validate an email address
  */
@@ -10,19 +11,19 @@ use ZeroBounce\Api;
 use ZeroBounce\Response\ValidateResponse;
 
 try {
-    
+
     /** @var string $apiKey */
     $apiKey = (string)getenv('ZEROBOUNCE_API_KEY');
-    
+
     /** @var HttpClient $client */
     $client = new HttpClient($apiKey);
-    
+
     /** @var Api $api */
     $api = new Api($client);
-    
+
     /** @var ValidateResponse $response */
     $response = $api->validate('valid@example.com');
-    
+
     if ($response->hasError()) {
         var_dump($response->getError());
     } else {

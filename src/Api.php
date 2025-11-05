@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce;
 
@@ -42,10 +44,10 @@ class Api implements ApiInterface
                 'ip_address' => $ipAddress,
             ]
         ]);
-        
+
         /** @var ValidateResponse $response */
         $response = ValidateResponse::fromResponse($response);
-        
+
         return $response;
     }
 
@@ -60,7 +62,7 @@ class Api implements ApiInterface
 
         /** @var CreditsResponse $response */
         $response = CreditsResponse::fromResponse($response);
-        
+
         return $response;
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\Test;
 
@@ -27,10 +29,10 @@ class Base extends TestCase
         if (empty($apiKey)) {
             throw new \ErrorException('Please provider the right api key by setting you ZEROBOUNCE_API_KEY environment variable!');
         }
-        
+
         /** @var HttpClient $client */
         $client = new HttpClient($apiKey);
-        
+
         /** @var Api api */
         $this->api = new Api($client);
 
