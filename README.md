@@ -17,7 +17,7 @@ $ composer require twisted1919/zerobounce
 
 #### PHP Versions
 
-Requires PHP >= 7.1  
+Requires PHP >= 8.2  
 
 ## Usage
 
