@@ -17,10 +17,8 @@ class CreditsTest extends Base
      */
     final public function testCredits(): void
     {
-        /** @var CreditsResponse $response */
         $response = $this->api->credits();
 
-        $this->assertInstanceOf(CreditsResponse::class, $response);
         $this->assertGreaterThanOrEqual(0, $response->getCredits());
     }
 }

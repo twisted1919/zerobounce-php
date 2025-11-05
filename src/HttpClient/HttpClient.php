@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace ZeroBounce\HttpClient;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\GuzzleException;
 use ZeroBounce\Exception\ClientException;
 use ZeroBounce\Exception\ErrorException;
 
@@ -51,6 +49,7 @@ class HttpClient implements HttpClientInterface
         if (empty($apiKey)) {
             throw new ErrorException('Please provide a valid api key!');
         }
+
         $this->apiKey = $apiKey;
         $this->client = new Client(array_merge_recursive(self::$options, $options));
     }
@@ -76,7 +75,7 @@ class HttpClient implements HttpClientInterface
      * @param array $options
      *
      * @return HttpResponseInterface
-     * @throws ClientException|GuzzleException
+     * @throws ClientException
      *
      * @phpstan-ignore-next-line missingType.iterableValue
      */
@@ -85,7 +84,7 @@ class HttpClient implements HttpClientInterface
         try {
             $response = $this->client->get($path, $this->mergeDefaultParams($options));
             $response = new HttpResponse((string)$response->getBody(), (int)$response->getStatusCode(), (array)$response->getHeaders());
-        } catch (BadResponseException $e) {
+        } catch (\Throwable $e) {
             throw new ClientException($e->getMessage(), $e->getCode());
         }
 

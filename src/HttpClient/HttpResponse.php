@@ -11,28 +11,11 @@ namespace ZeroBounce\HttpClient;
 class HttpResponse implements HttpResponseInterface
 {
     /**
-     * @var string
-     */
-    private $body = '';
-
-    /**
-     * @var int
-     */
-    private $code = 200;
-
-    /**
      * @var array
      *
      * @phpstan-ignore-next-line missingType.iterableValue
      */
-    private $headers = [];
-
-    /**
-     * @var array
-     *
-     * @phpstan-ignore-next-line missingType.iterableValue
-     */
-    private $responseData = [];
+    private array $responseData = [];
 
     /**
      * @param string $body
@@ -41,12 +24,11 @@ class HttpResponse implements HttpResponseInterface
      *
      * @phpstan-ignore-next-line missingType.iterableValue
      */
-    public function __construct(string $body, int $code, array $headers = [])
-    {
-        $this->body    = $body;
-        $this->code    = $code;
-        $this->headers = $headers;
-
+    public function __construct(
+        private readonly string $body,
+        private readonly int $code,
+        private readonly array $headers = []
+    ) {
         $this->responseData = (array)json_decode($this->body, true);
     }
 

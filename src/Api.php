@@ -16,16 +16,10 @@ use ZeroBounce\Response\ValidateResponse;
 class Api implements ApiInterface
 {
     /**
-     * @var HttpClient
-     */
-    private $httpClient;
-
-    /**
      * @param HttpClient $httpClient
      */
-    public function __construct(HttpClient $httpClient)
+    public function __construct(private readonly HttpClient $httpClient)
     {
-        $this->httpClient = $httpClient;
     }
 
     /**
