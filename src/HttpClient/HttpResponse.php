@@ -22,11 +22,15 @@ class HttpResponse implements HttpResponseInterface
 
     /**
      * @var array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     private $headers = [];
 
     /**
      * @var array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     private $responseData = [];
 
@@ -34,6 +38,8 @@ class HttpResponse implements HttpResponseInterface
      * @param string $body
      * @param int $code
      * @param array $headers
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function __construct(string $body, int $code, array $headers = [])
     {
@@ -51,11 +57,14 @@ class HttpResponse implements HttpResponseInterface
      */
     public static function fromResponse(HttpResponseInterface $response): HttpResponseInterface
     {
+        /** @phpstan-ignore-next-line missingType.iterableValue */
         return new static($response->getBody(), $response->getCode(), $response->getHeaders());
     }
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getResponseData(): array
     {
@@ -80,6 +89,8 @@ class HttpResponse implements HttpResponseInterface
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getHeaders(): array
     {

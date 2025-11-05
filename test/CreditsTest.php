@@ -21,6 +21,6 @@ class CreditsTest extends Base
         $response = $this->api->credits();
 
         $this->assertInstanceOf(CreditsResponse::class, $response);
-        $this->assertIsInt($response->getCredits());
+        $this->assertGreaterThanOrEqual(0, $response->getCredits());
     }
 }

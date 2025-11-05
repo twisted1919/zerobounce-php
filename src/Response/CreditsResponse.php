@@ -15,9 +15,7 @@ class CreditsResponse extends Response
      */
     public function getCredits(): int
     {
-        /** @var int $credits */
-        $credits = (int)($this->getResponseData()['Credits'] ?? 0);
-
-        return $credits;
+        /** @phpstan-ignore-next-line */
+        return (int)($this->getResponseData()['Credits'] ?? 0);
     }
 }

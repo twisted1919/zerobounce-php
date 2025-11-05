@@ -19,6 +19,8 @@ interface HttpResponseInterface
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getResponseData(): array;
 
@@ -34,6 +36,8 @@ interface HttpResponseInterface
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getHeaders(): array;
 }

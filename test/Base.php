@@ -23,18 +23,14 @@ class Base extends TestCase
      * @throws \ErrorException
      * @throws \ZeroBounce\Exception\ErrorException
      */
-    public function setUp()
+    public function setUp(): void
     {
         $apiKey = getenv('ZEROBOUNCE_API_KEY');
         if (empty($apiKey)) {
             throw new \ErrorException('Please provider the right api key by setting you ZEROBOUNCE_API_KEY environment variable!');
         }
 
-        /** @var HttpClient $client */
-        $client = new HttpClient($apiKey);
-
-        /** @var Api api */
-        $this->api = new Api($client);
+        $this->api = new Api(new HttpClient($apiKey));
 
         parent::setUp();
     }

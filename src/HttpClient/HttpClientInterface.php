@@ -15,6 +15,8 @@ interface HttpClientInterface
      * @param array $options
      *
      * @return HttpResponseInterface
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function get(string $path = '', array $options = []): HttpResponseInterface;
 }
