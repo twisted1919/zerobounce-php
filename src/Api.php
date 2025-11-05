@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce;
 
@@ -14,16 +16,10 @@ use ZeroBounce\Response\ValidateResponse;
 class Api implements ApiInterface
 {
     /**
-     * @var HttpClient
-     */
-    private $httpClient;
-
-    /**
      * @param HttpClient $httpClient
      */
-    public function __construct(HttpClient $httpClient)
+    public function __construct(private readonly HttpClient $httpClient)
     {
-        $this->httpClient = $httpClient;
     }
 
     /**
@@ -42,10 +38,10 @@ class Api implements ApiInterface
                 'ip_address' => $ipAddress,
             ]
         ]);
-        
+
         /** @var ValidateResponse $response */
         $response = ValidateResponse::fromResponse($response);
-        
+
         return $response;
     }
 
@@ -60,7 +56,7 @@ class Api implements ApiInterface
 
         /** @var CreditsResponse $response */
         $response = CreditsResponse::fromResponse($response);
-        
+
         return $response;
     }
 }

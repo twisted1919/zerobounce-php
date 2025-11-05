@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\Test;
 
@@ -15,10 +17,8 @@ class CreditsTest extends Base
      */
     final public function testCredits(): void
     {
-        /** @var CreditsResponse $response */
         $response = $this->api->credits();
 
-        $this->assertInstanceOf(CreditsResponse::class, $response);
-        $this->assertIsInt($response->getCredits());
+        $this->assertGreaterThanOrEqual(0, $response->getCredits());
     }
 }

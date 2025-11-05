@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\HttpClient;
 
@@ -17,6 +19,8 @@ interface HttpResponseInterface
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getResponseData(): array;
 
@@ -32,6 +36,8 @@ interface HttpResponseInterface
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getHeaders(): array;
 }

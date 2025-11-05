@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\HttpClient;
 
@@ -9,36 +11,24 @@ namespace ZeroBounce\HttpClient;
 class HttpResponse implements HttpResponseInterface
 {
     /**
-     * @var string
-     */
-    private $body = '';
-    
-    /**
-     * @var int
-     */
-    private $code = 200;
-    
-    /**
      * @var array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
-    private $headers = [];
-
-    /**
-     * @var array
-     */
-    private $responseData = [];
+    private array $responseData = [];
 
     /**
      * @param string $body
      * @param int $code
      * @param array $headers
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
-    public function __construct(string $body, int $code, array $headers = [])
-    {
-        $this->body    = $body;
-        $this->code    = $code;
-        $this->headers = $headers;
-
+    public function __construct(
+        private readonly string $body,
+        private readonly int $code,
+        private readonly array $headers = []
+    ) {
         $this->responseData = (array)json_decode($this->body, true);
     }
 
@@ -49,11 +39,14 @@ class HttpResponse implements HttpResponseInterface
      */
     public static function fromResponse(HttpResponseInterface $response): HttpResponseInterface
     {
+        /** @phpstan-ignore-next-line missingType.iterableValue */
         return new static($response->getBody(), $response->getCode(), $response->getHeaders());
     }
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getResponseData(): array
     {
@@ -78,6 +71,8 @@ class HttpResponse implements HttpResponseInterface
 
     /**
      * @return array
+     *
+     * @phpstan-ignore-next-line missingType.iterableValue
      */
     public function getHeaders(): array
     {

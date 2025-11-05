@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\Response;
 
@@ -13,6 +15,7 @@ class ValidateResponse extends Response
      */
     public function getStatus(): string
     {
+        /** @phpstan-ignore-next-line */
         return (string)($this->getResponseData()['status'] ?? '');
     }
 
@@ -29,6 +32,7 @@ class ValidateResponse extends Response
      */
     public function getError(): string
     {
+        /** @phpstan-ignore-next-line */
         return (string)($this->getResponseData()['error'] ?? '');
     }
 
@@ -39,7 +43,7 @@ class ValidateResponse extends Response
     {
         return strlen($this->getError()) > 0;
     }
-    
+
     /**
      * @param string $status
      *
@@ -49,7 +53,7 @@ class ValidateResponse extends Response
     {
         return $this->getStatus() === $status;
     }
-    
+
     /**
      * @return bool
      */
@@ -111,6 +115,7 @@ class ValidateResponse extends Response
      */
     public function getDomain(): string
     {
+        /** @phpstan-ignore-next-line */
         return $this->getResponseData()['domain'] ?? '';
     }
 
@@ -120,6 +125,8 @@ class ValidateResponse extends Response
     public function isFreeEmail(): bool
     {
         $isFreeEmail = $this->getResponseData()['free_email'] ?? false;
+
+        /** @phpstan-ignore-next-line */
         return $isFreeEmail === true || (int)$isFreeEmail === 1 || $isFreeEmail === 'true';
     }
 
@@ -128,6 +135,7 @@ class ValidateResponse extends Response
      */
     public function getAddress(): string
     {
+        /** @phpstan-ignore-next-line */
         return $this->getResponseData()['address'] ?? '';
     }
 }

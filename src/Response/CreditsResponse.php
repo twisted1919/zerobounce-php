@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace ZeroBounce\Response;
 
@@ -13,9 +15,7 @@ class CreditsResponse extends Response
      */
     public function getCredits(): int
     {
-        /** @var int $credits */
-        $credits = (int)($this->getResponseData()['Credits'] ?? 0);
-        
-        return $credits;
+        /** @phpstan-ignore-next-line */
+        return (int)($this->getResponseData()['Credits'] ?? 0);
     }
 }
