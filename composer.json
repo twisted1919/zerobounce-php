@@ -1,6 +1,6 @@
 {
     "name": "twisted1919/zerobounce",
-    "version": "2.0.0",
+    "version": "2.0.2",
     "description": "Unofficial PHP client for the ZeroBounce email verification API",
     "homepage": "https://github.com/twisted1919/zerobounce-php",
     "autoload": {
