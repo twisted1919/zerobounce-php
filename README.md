@@ -1,5 +1,9 @@
 # ZeroBounce Email Verification Library for PHP
 
+## Disclaimer
+
+`twisted1919/zerobounce` is an unofficial PHP client for the ZeroBounce API. If you’re looking for ZeroBounce’s official PHP SDK, use [`zero-bounce/sdk`](https://packagist.org/packages/zero-bounce/sdk).
+
 ## Getting Started  
 You will need a [zerobounce account](https://www.zerobounce.net) to get started.  
 Once you get an account, you will need to [get an api key](https://www.zerobounce.net/members/apikey/) 
